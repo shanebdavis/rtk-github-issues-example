@@ -1,6 +1,5 @@
 import React from 'react'
 import {useIssues} from 'redux/issues'
-import { Issue } from 'api/githubAPI'
 import { IssueListItem } from './IssueListItem'
 
 import styles from './IssuesList.module.css'

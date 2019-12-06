@@ -2,7 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import { insertMentionLinks } from 'utils/stringUtils'
-import { UserWithAvatar } from 'components/UserWithAvatar'
+import { UserWithAvatar } from 'components/partials/UserWithAvatar'
 
 import styles from './IssueComments.module.css'
 import { useComments } from 'redux/comments'

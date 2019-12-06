@@ -2,7 +2,6 @@ import { useRedux } from 'hooks-for-redux'
 import { getComments } from '../api/githubAPI'
 import { Comment } from 'api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
-import { setRepoDetails } from './repoDetails'
 
 interface CommentsState {
   comments?: Comment[]

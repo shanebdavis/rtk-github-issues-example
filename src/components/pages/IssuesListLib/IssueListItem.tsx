@@ -5,8 +5,8 @@ import { shorten } from 'utils/stringUtils'
 
 import {showIssueDetails} from 'redux/issuesDisplay'
 
-import { IssueLabels } from 'components/partials/IssueLabels'
-import { UserWithAvatar } from 'components/UserWithAvatar'
+import { IssueLabels } from 'components/pages/IssueDetailsLib/IssueLabels'
+import { UserWithAvatar } from 'components/partials/UserWithAvatar'
 
 import styles from './IssueListItem.module.css'
 

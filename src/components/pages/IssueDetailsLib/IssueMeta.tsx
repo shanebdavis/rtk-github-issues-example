@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { Issue } from 'api/githubAPI'
-import { UserWithAvatar } from 'components/UserWithAvatar'
+import { UserWithAvatar } from 'components/partials/UserWithAvatar'
 
 import styles from './IssueMeta.module.css'
 

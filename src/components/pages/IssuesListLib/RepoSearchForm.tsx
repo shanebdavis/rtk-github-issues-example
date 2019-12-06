@@ -1,6 +1,6 @@
 import React from 'react'
-import { useTextField } from '../../lib/hooks'
-import { setCurrentPage, setCurrentRepo, useIssuesDisplay } from '../../redux/issuesDisplay'
+import { useTextField } from '../../../utils/hooks'
+import { setCurrentPage, setCurrentRepo, useIssuesDisplay } from '../../../redux/issuesDisplay'
 import './pure-forms.css'
 import './pure-buttons.css'
 
