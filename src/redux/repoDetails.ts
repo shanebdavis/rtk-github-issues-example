@@ -3,30 +3,20 @@ import { getRepoDetails } from '../api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
 
 interface RepoDetailsState {
-  openIssuesCount?: number
+  openIssuesCount?: number | null
   loading?: boolean
   error?: string | null
 }
 
-const initialState: RepoDetailsState = {
-  openIssuesCount: -1,
-  error: null
-}
+const initialState: RepoDetailsState = {}
 
-export const [useRepoDetails, { setRepoDetails }] = useRedux(
-  'repoDetails',
-  initialState,
-  {
-    setRepoDetails: (repoDetails, patialState: RepoDetailsState) =>
-      Object.assign({}, repoDetails, patialState)
-  }
-)
+export const [useRepoDetails, setRepoDetails] = useRedux('repoDetails', initialState)
 
 issuesDisplayStore.subscribe(({ org, repo }) => {
-  setRepoDetails({ error: null, loading: true })
+  setRepoDetails({ loading: true })
   getRepoDetails(org, repo)
     .then(
-      ({ open_issues_count }) => setRepoDetails({ openIssuesCount: open_issues_count, loading: false }),
-      (error) => setRepoDetails({ error, loading: false }),
+      ({ open_issues_count: openIssuesCount }) => setRepoDetails({ openIssuesCount }),
+      (error) => setRepoDetails({ error }),
     )
 })

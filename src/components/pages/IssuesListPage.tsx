@@ -6,12 +6,12 @@ import { IssuesList } from '../partials/IssuesList'
 import { IssuePagination } from '../partials/IssuePagination'
 
 export const IssuesListPage = () => {
-  const { isLoading } = useIssues()
+  const { loading } = useIssues()
 
   return <div id="issue-list-page">
     <RepoSearchForm />
     <IssuesPageHeader />
-    {isLoading ? <h3>Loading...</h3> : <IssuesList />}
+    {loading ? <h3>Loading...</h3> : <IssuesList />}
     <IssuePagination />
   </div>
 }

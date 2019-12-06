@@ -2,13 +2,25 @@ import { useRedux } from 'hooks-for-redux'
 import { getComments } from '../api/githubAPI'
 import { Comment } from 'api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
+import { setRepoDetails } from './repoDetails'
 
-// TODO: unify comments / repoDetails and issues-loading to all support 'loading' and 'error'
-type CommentsState = Comment[]
-const initialState: CommentsState = []
+interface CommentsState {
+  comments?: Comment[]
+  loading?: boolean
+  error?: string | null
+}
+
+const initialState: CommentsState = {}
 
 export const [useComments, setComments] = useRedux('comments', initialState)
 
-issuesDisplayStore.subscribe(({ issue }) =>
-  issue == null ? setComments([]) :
-    getComments(issue.comments_url).then(setComments))
+issuesDisplayStore.subscribe(({ issue }) => {
+  if (issue == null) setComments(initialState)
+  else {
+    setComments({ loading: true })
+    getComments(issue.comments_url).then(
+      (comments) => setComments({ comments }),
+      (error) => setComments({ error }),
+    )
+  }
+})

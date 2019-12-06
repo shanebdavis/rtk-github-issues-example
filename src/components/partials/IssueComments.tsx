@@ -8,7 +8,7 @@ import styles from './IssueComments.module.css'
 import { useComments } from 'redux/comments'
 
 export const IssueComments = () => {
-  const comments = useComments()
+  const { comments = [] } = useComments()
 
   return <ul className={styles.commentsList}>
     {comments.map(comment =>

@@ -1,18 +1,10 @@
-import React, { useEffect } from 'react'
-import { useSelector, useDispatch, shallowEqual } from 'react-redux'
+import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 import { useComments } from 'redux/comments'
 
 import { insertMentionLinks } from 'utils/stringUtils'
 import { IssueComments } from '../partials/IssueComments'
-// import { IssueLabels } from 'components/IssueLabels'
-// import { RootState } from 'app/rootReducer'
-// import { fetchIssue } from 'features/issuesList/issuesSlice'
-
-// import { IssueMeta } from '../../../src copy/features/issueDetails/IssueMeta'
-// import { IssueComments } from '../../../src copy/features/issueDetails/IssueComments'
-// import { fetchComments } from '../../../src copy/features/issueDetails/commentsSlice'
 
 import styles from './IssueDetailsPage.module.css'
 import './IssueDetailsPage.css'
@@ -22,8 +14,7 @@ import { IssueLabels } from '../partials/IssueLabels'
 
 export const IssueDetailsPage = () => {
   const { issue } = useIssuesDisplay()
-  const comments = useComments()
-  const loading = !comments, error = null;
+  const { comments, loading, error } = useComments()
 
   const backToIssueListButton = (
     <button className="pure-button" onClick={showIssuesList}>

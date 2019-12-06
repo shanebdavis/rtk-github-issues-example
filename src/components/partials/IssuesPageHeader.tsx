@@ -10,7 +10,7 @@ export const IssuesPageHeader = () => {
   return <h1>
     <span>
       <span className="header__openIssues">{
-        openIssuesCount === -1
+        openIssuesCount == null
           ? "Open issues"
           : pluralize('open issue', openIssuesCount, true)
       }</span>

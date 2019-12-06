@@ -8,7 +8,7 @@ interface IssuesState {
   currentPageIssues?: number[]
   pageCount?: number
   pageLinks?: Links | null
-  isLoading?: boolean
+  loading?: boolean
   error?: string | null
 }
 
@@ -16,7 +16,7 @@ const initialState: IssuesState = {
   issues: [],
   pageCount: 0,
   pageLinks: {},
-  isLoading: false,
+  loading: false,
   error: null
 }
 
@@ -30,11 +30,11 @@ export const [useIssues, { setIssues }] = useRedux(
 )
 
 issuesDisplayStore.subscribe(({ org, repo, page }) => {
-  setIssues({ isLoading: true, error: null })
+  setIssues({ loading: true, error: null })
   getIssues(org, repo, page)
     .then(
       (issues) => setIssues(issues),
       (error) => setIssues({ error }),
     )
-    .finally(() => setIssues({ isLoading: false }))
+    .finally(() => setIssues({ loading: false }))
 })
