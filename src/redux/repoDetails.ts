@@ -1,11 +1,11 @@
 import { useRedux } from 'hooks-for-redux'
-import { getRepoDetails } from '../api/githubAPI'
+import { getRepoDetails } from 'api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
 
 interface RepoDetailsState {
-  openIssuesCount?: number | null
+  openIssuesCount?: number
   loading?: boolean
-  error?: string | null
+  error?: string
 }
 
 const initialState: RepoDetailsState = {}

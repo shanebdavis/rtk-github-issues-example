@@ -18,7 +18,6 @@ export const [
   issuesDisplayStore
 ] = useRedux(
   'issuesDisplay',
-
   initialState,
   {
     setCurrentRepo: (state, props: CurrentRepo) => Object.assign({}, state, props),

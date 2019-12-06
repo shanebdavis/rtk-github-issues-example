@@ -1,12 +1,11 @@
 import { useRedux } from 'hooks-for-redux'
-import { getComments } from '../api/githubAPI'
-import { Comment } from 'api/githubAPI'
+import { getComments, Comment } from 'api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
 
 interface CommentsState {
   comments?: Comment[]
   loading?: boolean
-  error?: string | null
+  error?: string
 }
 
 const initialState: CommentsState = {}

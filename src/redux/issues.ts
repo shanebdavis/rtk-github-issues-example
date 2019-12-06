@@ -1,24 +1,16 @@
 import { useRedux } from 'hooks-for-redux'
-import { Issue, getIssues } from '../api/githubAPI'
-import { Links } from 'parse-link-header'
+import { getIssues, Issue } from 'api/githubAPI'
 import { issuesDisplayStore } from './issuesDisplay'
 
 interface IssuesState {
   issues?: Issue[]
   currentPageIssues?: number[]
   pageCount?: number
-  pageLinks?: Links | null
   loading?: boolean
   error?: string | null
 }
 
-const initialState: IssuesState = {
-  issues: [],
-  pageCount: 0,
-  pageLinks: {},
-  loading: false,
-  error: null
-}
+const initialState: IssuesState = {}
 
 export const [useIssues, { setIssues }] = useRedux(
   'issues',
