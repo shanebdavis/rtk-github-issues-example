@@ -1,19 +1,15 @@
 import React from 'react'
-
+import {useIssues} from 'redux/issues'
 import { Issue } from 'api/githubAPI'
 import { IssueListItem } from './IssueListItem'
 
 import styles from './IssuesList.module.css'
 
-interface Props {
-  issues: Issue[]
-  showIssueComments: (issueId: number) => void
-}
-
-export const IssuesList = ({ issues, showIssueComments }: Props) => {
+export const IssuesList = () => {
+  const { issues = [] } =useIssues()
   const renderedIssues = issues.map(issue => (
     <li key={issue.id}>
-      <IssueListItem {...issue} showIssueComments={showIssueComments} />
+      <IssueListItem {...{issue}} />
     </li>
   ))
 

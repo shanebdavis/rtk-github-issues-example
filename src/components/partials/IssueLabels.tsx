@@ -8,7 +8,7 @@ interface IssueLabelsProps {
   className?: string
 }
 
-export const IssueLabels = ({ labels, className }: IssueLabelsProps) => (
+export const IssueLabels = ({ labels, className }: IssueLabelsProps) =>
   <div className={classnames('issue__labels', className)}>
     {labels.map(label => (
       <span
@@ -18,9 +18,6 @@ export const IssueLabels = ({ labels, className }: IssueLabelsProps) => (
           boxShadow: `0 0 2px #${label.color}`,
           borderColor: `#${label.color}`
         }}
-      >
-        {label.name}
-      </span>
+      >{label.name}</span>
     ))}
   </div>
-)
