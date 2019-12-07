@@ -1,7 +1,6 @@
 import React from 'react'
 import {useIssues} from 'redux/issues'
 import { IssueListItem } from './IssueListItem'
-
 import styles from './IssuesList.module.css'
 
 export const IssuesList = () => {

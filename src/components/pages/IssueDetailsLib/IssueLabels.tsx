@@ -1,6 +1,5 @@
 import React from 'react'
 import classnames from 'classnames'
-
 import { Label } from 'api/githubAPI'
 
 interface IssueLabelsProps {

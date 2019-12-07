@@ -6,7 +6,7 @@ import './pure-buttons.css'
 
 const buttonProps = {
   className: "pure-button pure-button-primary",
-  style:{ marginLeft: 5 }
+  style: { marginLeft: 5 }
 }
 
 export const RepoSearchForm = () => {
@@ -28,20 +28,20 @@ export const RepoSearchForm = () => {
       </label>
       <input name="repo" {...repoInput} />
 
-      <button type="button" {...buttonProps}
-        onClick={() => setCurrentRepo({ repo: repoInput.value, org: orgInput.value })}
-      >Load Repo</button>
+      <button type="button" {...buttonProps} onClick={
+        () => setCurrentRepo({ repo: repoInput.value, org: orgInput.value })
+      }>Load Repo</button>
     </div>
 
     <div style={{ marginTop: 5 }}>
       <label htmlFor="jumpToPage" style={{ marginRight: 5 }}>
         Issues Page:
-        </label>
+      </label>
       <input type='number' name="jumpToPage" {...pageInput} />
 
-      <button type="button" {...buttonProps}
-        onClick={() => page >= 1 && setCurrentPage(page)}
-      >Jump to Page</button>
+      <button type="button" {...buttonProps} onClick={
+        () => page >= 1 && setCurrentPage(page)
+      }>Jump to Page</button>
     </div>
   </form>
 }

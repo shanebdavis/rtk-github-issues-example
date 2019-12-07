@@ -1,20 +1,16 @@
 import React, { MouseEvent } from 'react'
-
 import { Issue } from 'api/githubAPI'
 import { shorten } from 'utils/stringUtils'
-
-import {showIssueDetails} from 'redux/issuesDisplay'
-
+import { showIssueDetails } from 'redux/issuesDisplay'
 import { IssueLabels } from 'components/pages/IssueDetailsLib/IssueLabels'
 import { UserWithAvatar } from 'components/partials/UserWithAvatar'
-
 import styles from './IssueListItem.module.css'
 
 const pluralize = require('pluralize')
 
-type Props = {issue: Issue}
+type Props = { issue: Issue }
 
-export const IssueListItem = ({issue}: Props) => {
+export const IssueListItem = ({ issue }: Props) => {
   const onIssueClicked = (e: MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()

@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import Paginate from 'react-paginate'
 import { useIssuesDisplay, setCurrentPage } from 'redux/issuesDisplay'
 import { useIssues } from 'redux/issues'
-
 import styles from './IssuePagination.module.css'
 import './IssuePagination.css'
 

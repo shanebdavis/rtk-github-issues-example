@@ -1,14 +1,10 @@
 import React from 'react'
 import classnames from 'classnames'
-
 import { Issue } from 'api/githubAPI'
 import { UserWithAvatar } from 'components/partials/UserWithAvatar'
-
 import styles from './IssueMeta.module.css'
 
-interface IssueProps {
-  issue: Issue
-}
+interface IssueProps { issue: Issue }
 
 const IssueState = ({ issue: { state } }: IssueProps) => (
   <span

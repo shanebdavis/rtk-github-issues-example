@@ -2,15 +2,13 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import classnames from 'classnames'
 import { useComments } from 'redux/comments'
-
+import { useIssuesDisplay, showIssuesList } from 'redux/issuesDisplay'
 import { insertMentionLinks } from 'utils/stringUtils'
 import { IssueComments } from './IssueDetailsLib/IssueComments'
-
-import styles from './IssueDetailsLib/IssueDetailsPage.module.css'
-import './IssueDetailsLib/IssueDetailsPage.css'
-import { useIssuesDisplay, showIssuesList } from 'redux/issuesDisplay'
 import { IssueMeta } from './IssueDetailsLib/IssueMeta'
 import { IssueLabels } from './IssueDetailsLib/IssueLabels'
+import styles from './IssueDetailsLib/IssueDetailsPage.module.css'
+import './IssueDetailsLib/IssueDetailsPage.css'
 
 export const IssueDetailsPage = () => {
   const { issue } = useIssuesDisplay()
