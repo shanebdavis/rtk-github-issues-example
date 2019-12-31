@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { insertMentionLinks } from 'utils/stringUtils'
-import { useComments } from 'redux/comments'
 import { UserWithAvatar } from 'components/partials/UserWithAvatar'
 import styles from './IssueComments.module.css'
+import { Comment } from 'api/githubAPI'
 
-export const IssueComments = () =>
+export const IssueComments = ({comments}:{comments: Comment[]}) =>
   <ul className={styles.commentsList}>
-    {(useComments().comments || []).map(comment =>
+    {(comments || []).map(comment =>
       <li key={comment.id}>
         <div className={styles.comment}>
           <UserWithAvatar

@@ -6,7 +6,7 @@ import { useIssuesDisplay, showIssuesList } from 'redux/issuesDisplay'
 import { insertMentionLinks } from 'utils/stringUtils'
 import { IssueComments } from './IssueDetailsLib/IssueComments'
 import { IssueMeta } from './IssueDetailsLib/IssueMeta'
-import { IssueLabels } from './IssueDetailsLib/IssueLabels'
+import { IssueLabels } from '../partials/IssueLabels'
 import styles from './IssueDetailsLib/IssueDetailsPage.module.css'
 import './IssueDetailsLib/IssueDetailsPage.css'
 
@@ -41,7 +41,7 @@ export const IssueDetailsPage = () => {
 
         <ul>{
           (comments &&
-            <IssueComments />
+            <IssueComments comments={comments}/>
           ) || (loading &&
             <div className="issue-detail--loading">
               <p>Loading comments...</p>
